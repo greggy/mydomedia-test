@@ -1,0 +1,8 @@
+
+<a href="{% url add %}">Add Person</a>
+{% for p in persons %}
+  <p>{{ p.first_name }} {{ p.last_name }} {{ p.city }} {{ p.get_state_display }} {{ p.email }}</p>
+  {% for sp in p.person1.all %}
+    <p>{{ sp.person2.first_name }} {{ sp.person2.last_name }} {{ sp.get_status_display }}</p>
+  {% endfor %}
+{% endfor %}
